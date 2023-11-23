@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>אימות מספר זהות</title>
+</head>
+<body>
+    <div id="main-container">
+        <h1>אימות מספר זהות</h1>
+        <h3 style="color: #E19898;">הקלד/י עד 8 ספרות ןלחץ/י "תשובה" כדי לקבל את ספרת הביקורת<br>או הקלד/י 9 ספרות ולחץ/י "תשובה" כדי לאמת את מספר הזהות</h3>
+        <form id="id-input-container">
+            <input type="text" placeholder="הקלד/י מספר" maxlength="9" id="id-input">
+            <button onclick="{validate()}">תשובה</button>
+        </form>
+        <div id="validator">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
