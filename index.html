@@ -11,7 +11,7 @@
         <h1>אימות מספר זהות</h1>
         <h3 style="color: #E19898;">הקלד/י עד 8 ספרות ןלחץ/י "תשובה" כדי לקבל את ספרת הביקורת<br>או הקלד/י 9 ספרות ולחץ/י "תשובה" כדי לאמת את מספר הזהות</h3>
         <form id="id-input-container">
-            <input type="text" placeholder="הקלד/י מספר" maxlength="9" id="id-input">
+            <input onclick="{clearMsg()}" type="text" placeholder="הקלד/י מספר" maxlength="9" id="id-input">
             <button onclick="{validate()}">תשובה</button>
         </form>
         <div id="validator">
