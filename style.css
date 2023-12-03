@@ -78,3 +78,13 @@ button:disabled {
     background-color: #2c1427;
     color: rgba(255, 255, 255, 0.87);
 }
+
+#validator{
+    margin-bottom: 100px;
+}
+
+#footer, a{
+    color: #ffffff;
+    font-size: 90%;
+    font-weight: 600;
+}
