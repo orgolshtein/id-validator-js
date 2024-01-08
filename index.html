@@ -4,21 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>אימות מספר זהות</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-    <div id="main-container">
-        <h1>אימות מספר זהות</h1>
-        <h3 style="color: #E19898;">הקלד/י עד 8 ספרות ולחץ/י "תשובה" כדי לקבל את ספרת הביקורת<br>או הקלד/י 9 ספרות ולחץ/י "תשובה" כדי לאמת את מספר הזהות המלא</h3>
-        <form id="id-input-container">
-            <input onclick="{clearMsg()}" type="text" placeholder="הקלד/י מספר" maxlength="9" id="id-input">
-            <button onclick="{validate()}">תשובה</button>
-        </form>
-        <div id="validator">
-        </div>
-        <div id="footer">נבנה על ידי אור גולשטיין: <a href="https://github.com/orgolshtein" target="_blank">github.com/orgolshtein</a></div>
+<body onload="{mainContent()}">
+    <div id="lang-selector-container">
+        <select id="lang-selector" name="lang-selector" onclick="{mainContent()}">
+            <option value="hebrew">עברית</option>
+            <option value="english">English</option>
+        </select>
     </div>
+    <div id="main-container" class="he-text"></div>
     <script src="./script.js"></script>
 </body>
 </html>
