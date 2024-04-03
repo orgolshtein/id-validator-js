@@ -6,32 +6,38 @@ const zeroPad = (str, places) => str.padStart(places, '0');
 
 const mainContent = () => {
     if (document.querySelector("#lang-selector").value === "hebrew"){
-        document.title = "אימות מספר זהות";
+        document.title = "אימות מספר זהות | JavaScript";
         document.querySelector("#main-container").classList.add("he-text");
         document.querySelector("#main-container").innerHTML = `
         <h1>אימות מספר זהות</h1>
-        <h3 style="color: #E19898;">הקלד/י עד 8 ספרות ולחץ/י "תשובה" כדי לקבל את ספרת הביקורת<br>או הקלד/י 9 ספרות ולחץ/י "תשובה" כדי לאמת את מספר הזהות המלא</h3>
+        <h3>הקלד/י עד 8 ספרות ולחץ/י "תשובה" כדי לקבל את ספרת הביקורת<br>או הקלד/י 9 ספרות ולחץ/י "תשובה" כדי לאמת את מספר הזהות המלא</h3>
         <form id="id-input-container">
             <input onclick="{clearMsg()}" type="text" placeholder="הקלד/י מספר" maxlength="9" id="id-input">
             <button onclick="{validate()}">תשובה</button>
         </form>
         <div id="validator">
         </div>
-        <div id="footer">נבנה על ידי אור גולשטיין: <a href="https://github.com/orgolshtein" target="_blank">github.com/orgolshtein</a></div>
+        <div id="footer">
+            <p>נבנה על ידי אור גולשטיין: <a href="https://github.com/orgolshtein" target="_blank">github.com/orgolshtein</a></p>
+            <img src="js.png" alt="js-logo">
+        </div>
         `
     } else{
-        document.title = "Israeli ID Validator";
+        document.title = "Israeli ID Validator | JavaScript";
         document.querySelector("#main-container").classList.remove("he-text");
         document.querySelector("#main-container").innerHTML = `
         <h1>Israeli ID Validator</h1>
-        <h3 style="color: #E19898;">Type up to 8 digits and click "Answer" to receive the control digit<br>or type 9 digits and click "Answer" to validate the full ID</h3>
+        <h3>Type up to 8 digits and click "Answer" to receive the control digit<br>or type 9 digits and click "Answer" to validate the full ID</h3>
         <form id="id-input-container">
             <input onclick="{clearMsg()}" type="text" placeholder="Type digits" maxlength="9" id="id-input">
             <button onclick="{validate()}">Answer</button>
         </form>
         <div id="validator">
         </div>
-        <div id="footer">Created by Or Golshtein: <a href="https://github.com/orgolshtein" target="_blank">github.com/orgolshtein</a></div>
+        <div id="footer">
+            <p> Created by Or Golshtein: <a href="https://github.com/orgolshtein" target="_blank">github.com/orgolshtein</a></p>
+            <img src="js.png" alt="js-logo">
+        </div>
         `
     }
 }
@@ -56,26 +62,26 @@ const validate = () => {
 
     if (document.querySelector("#lang-selector").value === "hebrew"){
         isNaN(Number(input))=== true ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #ad0c49;">יש להקליד מספרים בלבד</h3>`: 
+        document.querySelector("#validator").innerHTML = `<h3 style="color: #773c3c;">יש להקליד מספרים בלבד</h3>`: 
         (input.length === 9) && ((sum) % 10 !== 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #ad0c49;">מספר הזהות ${zeroPad(input,9)} לא תקין</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: #773c3c;">מספר הזהות ${zeroPad(input,9)} לא תקין</h2>` : 
         (input.length === 9) && ((sum) % 10 === 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #33BBC5;">מספר הזהות ${zeroPad(input,9)} תקין</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: #36b1ad;">מספר הזהות ${zeroPad(input,9)} תקין</h2>` : 
         input.length === 0 ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #E19898;">הקלד ספרות כדי לקבל את ספרת הביקורת</h3>` : 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #E19898;">ספרת הביקורת עבור ${zeroPad(input,8)} היא</h3>
-            <h2 style="color: #33BBC5;">${output}</h2>`;
+        document.querySelector("#validator").innerHTML = `<h3>הקלד ספרות כדי לקבל את ספרת הביקורת</h3>` : 
+        document.querySelector("#validator").innerHTML = `<h3>ספרת הביקורת עבור ${zeroPad(input,8)} היא</h3>
+            <h2 style="color: #36b1ad;">${output}</h2>`;
     }else{
         isNaN(Number(input))=== true ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #ad0c49;">Only digits please</h3>`: 
+        document.querySelector("#validator").innerHTML = `<h3 style="color: #773c3c;">Only digits please</h3>`: 
         (input.length === 9) && ((sum) % 10 !== 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #ad0c49;">ID ${zeroPad(input,9)} is invalid</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: #773c3c;">ID ${zeroPad(input,9)} is invalid</h2>` : 
         (input.length === 9) && ((sum) % 10 === 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #33BBC5;">ID ${zeroPad(input,9)} is valid</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: #36b1ad;">ID ${zeroPad(input,9)} is valid</h2>` : 
         input.length === 0 ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #E19898;">Type digits to receive the control digit</h3>` : 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #E19898;">The control digit for ${zeroPad(input,8)} is</h3>
-            <h2 style="color: #33BBC5;">${output}</h2>`;
+        document.querySelector("#validator").innerHTML = `<h3>Type digits to receive the control digit</h3>` : 
+        document.querySelector("#validator").innerHTML = `<h3>The control digit for ${zeroPad(input,8)} is</h3>
+            <h2 style="color: #36b1ad;">${output}</h2>`;
     }
     input = "";
     sum = 0;
