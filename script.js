@@ -62,26 +62,26 @@ const validate = () => {
 
     if (document.querySelector("#lang-selector").value === "hebrew"){
         isNaN(Number(input))=== true ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #773c3c;">יש להקליד מספרים בלבד</h3>`: 
+        document.querySelector("#validator").innerHTML = `<h3 style="color: red;">יש להקליד מספרים בלבד</h3>`: 
         (input.length === 9) && ((sum) % 10 !== 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #773c3c;">מספר הזהות ${zeroPad(input,9)} לא תקין</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: red;">מספר הזהות ${zeroPad(input,9)} לא תקין</h2>` : 
         (input.length === 9) && ((sum) % 10 === 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #36b1ad;">מספר הזהות ${zeroPad(input,9)} תקין</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: green;">מספר הזהות ${zeroPad(input,9)} תקין</h2>` : 
         input.length === 0 ? 
         document.querySelector("#validator").innerHTML = `<h3>הקלד ספרות כדי לקבל את ספרת הביקורת</h3>` : 
         document.querySelector("#validator").innerHTML = `<h3>ספרת הביקורת עבור ${zeroPad(input,8)} היא</h3>
-            <h2 style="color: #36b1ad;">${output}</h2>`;
+            <h2 style="color: green;">${output}</h2>`;
     }else{
         isNaN(Number(input))=== true ? 
-        document.querySelector("#validator").innerHTML = `<h3 style="color: #773c3c;">Only digits please</h3>`: 
+        document.querySelector("#validator").innerHTML = `<h3 style="color: red;">Only digits please</h3>`: 
         (input.length === 9) && ((sum) % 10 !== 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #773c3c;">ID ${zeroPad(input,9)} is invalid</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: red;">ID ${zeroPad(input,9)} is invalid</h2>` : 
         (input.length === 9) && ((sum) % 10 === 0) ? 
-        document.querySelector("#validator").innerHTML = `<h2 style="color: #36b1ad;">ID ${zeroPad(input,9)} is valid</h2>` : 
+        document.querySelector("#validator").innerHTML = `<h2 style="color: green;">ID ${zeroPad(input,9)} is valid</h2>` : 
         input.length === 0 ? 
         document.querySelector("#validator").innerHTML = `<h3>Type digits to receive the control digit</h3>` : 
         document.querySelector("#validator").innerHTML = `<h3>The control digit for ${zeroPad(input,8)} is</h3>
-            <h2 style="color: #36b1ad;">${output}</h2>`;
+            <h2 style="color: green;">${output}</h2>`;
     }
     input = "";
     sum = 0;

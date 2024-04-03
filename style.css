@@ -8,7 +8,7 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    background-color: #1e1b0e;
+    background-color: #edd54e;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -22,8 +22,8 @@
     right: 20px;
     margin: 30px;
     height: 30px;
-    background-color: #4c4422;
-    color: rgba(255, 255, 255, 0.87);
+    background-color: #9f8e46;
+    color: #000000;
     border-radius: 3px;
 }
 
@@ -49,15 +49,18 @@ h1 {
     font-size: 3.2em;
     line-height: 1.1;
     margin: 30px;
-    color: rgba(245, 243, 127, 0.87);
+    color: #000000;
+    text-shadow: #030d029c 1px 0 3px;
 }
   
 h2 {
-    font-size: 2.5em;
+    font-size: 2em;
+    text-shadow: #030d029c 1px 0 3px;
 }
 
 h3 {
-    color: #77763c;
+    color: #000000;
+    text-shadow: #030d029c 1px 0 3px;
 }
   
 button {
@@ -68,10 +71,11 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #9da267;
+    background-color: #9f8e46;
     cursor: pointer;
     transition: border-color 0.25s;
-    color: rgba(255, 255, 255, 0.87);
+    color: #000000;
+    box-shadow: #000000 0 1px 5px;
 }
 
 button:hover {
@@ -93,16 +97,16 @@ button:disabled {
     margin: 30px;
     width: 200px;
     height: 30px;
-    background-color: #4c4422;
-    color: rgba(255, 255, 255, 0.87);
+    background-color: #9f8e46;
+    color: #000000;
 }
 
 #validator{
-    margin-bottom: 100px;
+    height: 80px;
 }
 
 #footer, a{
-    color: rgba(245, 243, 127, 0.87);
+    color: #000000;
     font-size: 90%;
     font-weight: 600;
 }
@@ -110,4 +114,9 @@ button:disabled {
 img{
     width: 50px;
     height: 50px;
+    box-shadow: #000000 1px 0 3px;
+    border-radius: 50%;
+}
+p {
+    margin: 10px;
 }
