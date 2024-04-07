@@ -19,7 +19,7 @@ const pickLang = () => {
             valid: (x) => `מספר הזהות ${x.padStart(9, '0')} תקין`,
             ready: "הקלד ספרות כדי לקבל את ספרת הביקורת",
             controlDigit: (x) => `ספרת הביקורת עבור ${x.padStart(8, '0')} היא`,
-            footer: 'נבנה עך ידי אור גולשטיין:'
+            footer: 'נבנה על ידי אור גולשטיין:'
           } :
           validatorTexts = {
               title: 'Israeli ID Validator',
