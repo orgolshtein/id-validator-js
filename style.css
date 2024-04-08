@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -16,7 +16,7 @@
     -webkit-text-size-adjust: 100%;
 }
 
-#lang-selector{
+#lang-selector {
     position: absolute;
     top: 0;
     right: 20px;
@@ -34,7 +34,7 @@
     text-align: center;
 }
 
-.he-text{
+.he-text {
     direction: rtl;
 }
 
@@ -90,7 +90,7 @@ button:disabled {
     cursor: default;
 }
 
-#id-input{
+#id-input {
     margin: 30px;
     width: 200px;
     height: 30px;
@@ -98,17 +98,17 @@ button:disabled {
     color: #000000;
 }
 
-#validator{
+#validator {
     height: 80px;
 }
 
-#footer, a{
+#footer, a {
     color: #000000;
     font-size: 90%;
     font-weight: 600;
 }
 
-img{
+img {
     width: 50px;
     height: 50px;
     box-shadow: #000000 1px 0 3px;

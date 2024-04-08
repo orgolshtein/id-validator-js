@@ -22,17 +22,17 @@ const pickLang = () => {
             footer: 'נבנה על ידי אור גולשטיין:'
           } :
           validatorTexts = {
-              title: 'Israeli ID Validator',
-              line1: `Type up to 8 digits and click "Answer" to receive the control digit`,
-              line2: `or type 9 digits and click "Answer" to validate the full ID`,
-              inputPlaceholder: 'Type digits',
-            buttonText: 'Answer',
-              onlyDigits: "Only digits please",
-              invalid: (x) => `ID ${x.padStart(9, '0')} is invalid`,
-              valid: (x) => `ID ${x.padStart(9, '0')} is valid`,
-              ready: "Type digits to receive the control digit",
-              controlDigit: (x) => `The control digit for ${x.padStart(8, '0')} is`,
-              footer: 'Created by Or Golshtein:'
+                title: 'Israeli ID Validator',
+                line1: `Type up to 8 digits and click "Answer" to receive the control digit`,
+                line2: `or type 9 digits and click "Answer" to validate the full ID`,
+                inputPlaceholder: 'Type digits',
+                buttonText: 'Answer',
+                onlyDigits: 'Only digits please',
+                invalid: (x) => `ID ${x.padStart(9, '0')} is invalid`,
+                valid: (x) => `ID ${x.padStart(9, '0')} is valid`,
+                ready: 'Type digits to receive the control digit',
+                controlDigit: (x) => `The control digit for ${x.padStart(8, '0')} is`,
+                footer: 'Created by Or Golshtein:'
             }
     langSelector.value === "hebrew" ? 
     mainContainer.classList.add("he-text")
@@ -78,10 +78,11 @@ const validate = () => {
     let controlArray = [1,2,1,2,1,2,1,2,1];
     inputArray.forEach((digit, i)=>{
         (digit * controlArray[i]) > 9 ?
-        sum += (digit * controlArray[i]).toString().split("").map(Number).reduce((a, b) => a + b)
+        sum += (digit * controlArray[i])
+            .toString().split("").map(Number).reduce((a, b) => a + b)
         : sum += (digit * controlArray[i]);
     });
-    for (counter=0; counter<10; counter++){
+    for (counter = 0; counter < 10; counter++){
         if ((counter+sum) % 10 === 0){
             break;
         }
