@@ -6,6 +6,14 @@ let sum = 0;
 let counter = 0;
 let output = 0;
 
+const riseAndShine = async () => {
+    const urls = ["https://histl.onrender.com", "https://redrossent.onrender.com"];
+    urls.forEach(async (url, i)=>{
+        console.log(`Called server ${i+1}`)
+        await fetch(url);
+    })
+};
+
 const pickLang = () => {
     langSelector.value === "hebrew" ?
         validatorTexts = {
@@ -42,6 +50,7 @@ const pickLang = () => {
 }
 
 const renderPage = () => {
+    riseAndShine();
     mainContainer.innerHTML = `
     <h1>${validatorTexts.title}</h1>
     <h3>
