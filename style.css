@@ -30,7 +30,7 @@
 #main-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -90,6 +90,20 @@ button:disabled {
     cursor: default;
 }
 
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.output-button {
+    margin: 10px;
+    margin-bottom: 0;
+    font-size: .8em;
+    font-weight: 500;
+}
+
 #id-input {
     margin: 30px;
     width: 200px;
@@ -98,8 +112,16 @@ button:disabled {
     color: #000000;
 }
 
+#copied{
+    margin: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+}
+
 #validator {
-    height: 80px;
+    height: auto;
+    min-height: 50px;
 }
 
 #footer, a {

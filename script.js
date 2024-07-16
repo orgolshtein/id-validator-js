@@ -27,6 +27,8 @@ const pickLang = () => {
             valid: (x) => `מספר הזהות ${x.padStart(9, '0')} תקין`,
             ready: "הקלד ספרות כדי לקבל את ספרת הביקורת",
             controlDigit: (x) => `ספרת הביקורת עבור ${x.padStart(8, '0')} היא`,
+            copyText: 'העתק',
+            copiedText: 'מספר זהות הועתק',
             footer: 'נבנה על ידי אור גולשטיין:'
           } :
           validatorTexts = {
@@ -40,6 +42,8 @@ const pickLang = () => {
                 valid: (x) => `ID ${x.padStart(9, '0')} is valid`,
                 ready: 'Type digits to receive the control digit',
                 controlDigit: (x) => `The control digit for ${x.padStart(8, '0')} is`,
+                copyText: 'Copy',
+                copiedText: 'ID copied',
                 footer: 'Created by Or Golshtein:'
             }
     langSelector.value === "hebrew" ? 
@@ -102,11 +106,23 @@ const validate = () => {
     (input.length === 9) && ((sum) % 10 !== 0) ? 
     validator.innerHTML = `<h2 style="color: red;">${validatorTexts.invalid(input)}</h2>` : 
     (input.length === 9) && ((sum) % 10 === 0) ? 
-    validator.innerHTML = `<h2 style="color: green;">${validatorTexts.valid(input)}</h2>` : 
+    validator.innerHTML = `<h2 style="color: green;">${validatorTexts.valid(input)}</h2>
+    <button onclick="copyOutput('${input.padStart(9, '0')}')" class="output-button">
+    ${validatorTexts.copyText}
+    </button><br/><span id="copied"></span>` : 
     input.length === 0 ? 
     validator.innerHTML = `<h3>${validatorTexts.ready}</h3>` : 
     validator.innerHTML = `<h3>${validatorTexts.controlDigit(input)}</h3>
-        <h2 style="color: green;">${output}</h2>`;
+        <h2 style="color: green;">${output}</h2>
+        <div class="flex">
+            <h3 style="color: green;">
+                ${input.padStart(8, '0')+output}
+            </h3>
+            <button onclick="copyOutput('${input.padStart(8, '0')+output}')" class="output-button">
+                ${validatorTexts.copyText}
+            </button>
+        </div>
+        <span id="copied"></span>`
     input = "";
     sum = 0;
     counter = 0;
@@ -114,6 +130,16 @@ const validate = () => {
     document.querySelector("button").disabled = true;
 
 };
+
+const copyOutput = (x) => {
+    document.querySelector("#copied").innerHTML = validatorTexts.copiedText;
+    document.querySelector(".output-button").disabled = true;
+    navigator.clipboard.writeText(x);
+    setTimeout(()=>{
+        document.querySelector("#copied").innerHTML = "";
+        document.querySelector(".output-button").disabled = false;
+    },2000)
+}
 
 const clearMsg = () => {
     document.querySelector("button").disabled = false;
